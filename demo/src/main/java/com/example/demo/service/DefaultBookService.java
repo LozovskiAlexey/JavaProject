@@ -32,7 +32,7 @@ public class DefaultBookService implements BookService{
         Book book = new Book();
         book.setName(name);
         book.setPrice(price);
-        book.setOrders(Collections.emptySet());
+        book.setOrders(Collections.emptyList());
         return bookConverter.toBookDto(bookRepository.save(book));
     }
 

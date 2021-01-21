@@ -5,7 +5,8 @@ import com.example.demo.entity.Client;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Set;
+import java.util.List;
+
 
 @Data
 @Builder
@@ -14,5 +15,5 @@ public class OrderDto {
     private Integer id;
     private Client client;
     private Integer cost;
-    private Set<Book> books;
+    private List<Book> books;
 }

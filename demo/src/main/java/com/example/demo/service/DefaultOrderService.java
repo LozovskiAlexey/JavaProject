@@ -51,10 +51,15 @@ public class DefaultOrderService implements OrderService{
         Optional <Book> optionalBook = bookRepository.findById(bookId);
 
         if (optionalBook.isPresent() && optionalOrder.isPresent()){
+            System.out.println("great");
             Order order = optionalOrder.get();
             order.getBooks().add(optionalBook.get());
             order.setCost(order.getCost() + optionalBook.get().getPrice());
             orderRepository.save(order);
+
+            Book book = optionalBook.get();
+            book.getOrders().add(order);
+            bookRepository.save(book);
         }
     }
 
@@ -65,7 +70,7 @@ public class DefaultOrderService implements OrderService{
         if (client.isPresent()){
             Order order = new Order();
             order.setCost(0);
-            order.setBooks(Collections.emptySet());
+            order.setBooks(Collections.emptyList());
             order.setClient(client.get());
             orderRepository.save(order);
         }

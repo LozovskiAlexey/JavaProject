@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 
 @Entity //Говорим, что наш класс является сущностью
@@ -26,7 +26,7 @@ public class Book {
     @Column(name = "price")
     private Integer price;
 
-    @ManyToMany(mappedBy = "books", fetch = FetchType.LAZY)
+    @ManyToMany
     @JsonIgnoreProperties("books")
-    private Set<Order> orders;
+    private List<Order> orders;
 }

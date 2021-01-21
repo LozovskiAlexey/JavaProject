@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -31,11 +32,11 @@ public class Order {
     // TODO уточнить как генерируются имена для колонки id (например, у класса ORDERS orders_id?)
 
     @ManyToMany
-    @JoinTable(
-            name = "orders_books",
-            joinColumns = @JoinColumn(name = "orders_id"),
-            inverseJoinColumns = @JoinColumn(name = "book_id")
-    )
+//    @JoinTable(
+//            name = "orders_books",
+//            joinColumns = @JoinColumn(name = "orders_id"),
+//            inverseJoinColumns = @JoinColumn(name = "book_id")
+//    )
     @JsonIgnoreProperties("orders")
-    private Set<Book> books;
+    private List<Book> books;
 }

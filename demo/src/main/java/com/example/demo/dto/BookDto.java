@@ -4,7 +4,7 @@ import com.example.demo.entity.Order;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Set;
+import java.util.List;
 
 // Класс, который служит для передачи данных между слоями
 @Data
@@ -14,6 +14,5 @@ public class BookDto {
     private Integer id;
     private String name;
     private Integer price;
-    private Set<Order> orders;
-
+    private List<Order> orders;
 }
