@@ -23,12 +23,12 @@
 ### Client
 1. POST /client - Добавить пользователя
 2. GET /client/ClientId - Посмотреть информацию о пользователе 
-3. PATCH /client/ClientId - Обновить сведения о пользователе
+3. PUT /client/ClientId - Обновить сведения о пользователе
 
 ### Order
 Заказ может делать только существующий пользователь, поэтому
 1. GET /orders - Получить все заказы в системе
 2. GET /client/{ClientId}/orders/{OrderId} - Получить список заказов текущего пользователя
 3. POST //client/{ClientId}/{BookId} - Создать заказ с книгой
-4. PATCH /client/{ClientId}/orders/{OrderId}/{BookId} - Добавить в заказ книгу
+4. PUT /client/{ClientId}/orders/{OrderId}/{BookId} - Добавить в заказ книгу
 5. DELETE /client/{ClientId}/orders - Удалить все заказы
